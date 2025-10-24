@@ -1,6 +1,6 @@
 <?php
 
-namespace Tualo\Office\DS\ExtJsDynamic;
+namespace Tualo\Office\ExtJsDynamic\Middlewares;
 
 use Tualo\Office\Basic\TualoApplication;
 use Tualo\Office\Basic\IMiddleware;
