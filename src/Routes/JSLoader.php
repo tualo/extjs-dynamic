@@ -17,7 +17,7 @@ class JsLoader implements IRoute
             $session = App::get('session');
             $db = $session->getDB();
             if ($matches['file'] . '.js' == 'preload.js') {
-                $js = $db->singleValue('select group_concat(sourcecode separator char(10)) sourcecode from tualo_dynamic_javascript where preload=1 and active=1', [], 'sourcecode');
+                $js = $db->singleValue('select group_concat(sourcecode separator "\n") sourcecode from tualo_dynamic_javascript where preload=1 and active=1', [], 'sourcecode');
                 App::body($js);
             } else {
             }

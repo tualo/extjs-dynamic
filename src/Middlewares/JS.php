@@ -11,7 +11,7 @@ class JS implements IMiddleware
     {
         TualoApplication::use('dynamic_javascript', function () {
             try {
-                TualoApplication::javascript('dynamic_javascript', './js-extjs-dynamic/preload.js', [], 100000);
+                TualoApplication::javascript('dynamic_javascript', './js-extjs-dynamic/preload.js', [], 2000000);
             } catch (\Exception $e) {
                 TualoApplication::set('maintanceMode', 'on');
                 TualoApplication::addError($e->getMessage());
