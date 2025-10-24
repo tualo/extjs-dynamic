@@ -20,6 +20,8 @@ class JsLoader implements IRoute
                 $js = $db->singleValue('select group_concat(sourcecode separator "\n") sourcecode from tualo_dynamic_javascript where preload=1 and active=1', [], 'sourcecode');
                 App::body($js);
             } else {
+                $js = $db->singleValue('select group_concat(sourcecode separator "\n") sourcecode from tualo_dynamic_javascript where preload=0 and active=1 and id = {file}', $matches, 'sourcecode');
+                App::body($js);
             }
 
             /*
